@@ -1,7 +1,7 @@
 export const LogoNlwESports = () => (
 	<svg width="286" height="160" viewBox="0 0 286 160" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<g clipPath="url(#clip0_4_179)">
-		<mask id="mask0_4_179" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="17" width="285" height="125">
+		<mask id="mask0_4_179" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="0" y="17" width="285" height="125">
 		<rect y="17.0518" width="284.938" height="124.058" fill="url(#paint0_linear_4_179)"/>
 		</mask>
 		<g mask="url(#mask0_4_179)">
