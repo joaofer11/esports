@@ -20,4 +20,31 @@ app.get("/games", async (req, res) => {
   return res.json(games);
 });
 
+app.get("/games/:id/ads", async (req, res) => {
+  const gameId = req.params.id;
+
+  const ads = await prisma.ad.findMany({
+    select: {
+      id: true,
+      name: true,
+      hourEnd: true,
+      weekDays: true,
+      hourStart: true,
+      yearsPlaying: true,
+      useVoiceChannel: true,
+    },
+    where: {
+      gameId,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+
+  return res.json(ads.map(ad => ({
+    ...ad,
+    weekDays: ad.weekDays.split(',')
+  })));
+});
+
 app.listen(3333);
