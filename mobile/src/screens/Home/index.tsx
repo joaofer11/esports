@@ -1,5 +1,6 @@
 import { styles } from "./styles";
 import { useState, useEffect } from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Heading } from "../../components/Heading";
 import { GameCard } from "../../components/GameCard";
 import { View, Image, FlatList } from "react-native";
@@ -27,7 +28,7 @@ export const Home = () => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Image source={logoImg} style={styles.logoImg} />
 
       <Heading
@@ -43,6 +44,6 @@ export const Home = () => {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.gamesList}
       />
-    </View>
+    </SafeAreaView>
   );
 };
